@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Barbería</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lista de Reservas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+            </tr>
+        </thead>
+        <tbody id="tablaReservas"></tbody>
+    </table>
+    <script>
+        async function cargarReservas() {
+            const response = await fetch("http://localhost:3000/reservas");
+            const reservas = await response.json();
+
+            const tabla = document.getElementById("tablaReservas");
+            tabla.innerHTML = "";
+            reservas.forEach(reserva => {
+                const row = `<tr><td>${reserva.nombre}</td><td>${reserva.fecha}</td><td>${reserva.hora}</td></tr>`;
+                tabla.innerHTML += row;
+            });
+        }
+        cargarReservas();
+    </script>
+</body>
+</html>

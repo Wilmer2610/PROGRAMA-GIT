@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbería - Reserva tu Cita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Barbería Premium</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#reservas">Reservar</a></li>
+                <li><a href="admin.html">Ver Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>Bienvenido a la mejor barbería</h2>
+        <p>Calidad y estilo en cada corte.</p>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Corte clásico - $10</li>
+            <li>Afeitado completo - $8</li>
+            <li>Corte y barba - $15</li>
+        </ul>
+    </section>
+
+    <section id="reservas">
+        <h2>Reserva tu Cita</h2>
+        <form id="formReserva">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+        <p id="mensaje"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
